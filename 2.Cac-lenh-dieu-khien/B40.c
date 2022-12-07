@@ -1,0 +1,1 @@
+﻿/*Nhập vào số nguyên dương . Cho biết số nguyên dương n có bao nhiêu ước là số nguyên dương.*/

@@ -1,0 +1,1 @@
+﻿//Đếm số lần xuất hiện của phần tử x trong mảng a

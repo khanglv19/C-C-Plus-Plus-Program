@@ -1,0 +1,1 @@
+﻿// Viết hàm tính tổng các phần tử của mảng gồm n phần tử.

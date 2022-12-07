@@ -1,0 +1,1 @@
+﻿// Nhập mảng a gồm n phần tử sao cho mọi phần tử lặp lại không quá hai lần

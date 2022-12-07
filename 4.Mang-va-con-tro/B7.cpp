@@ -1,0 +1,1 @@
+﻿// Viết hàm tìm phần tử nhỏ nhất trong mảng số nguyên n phần tử.

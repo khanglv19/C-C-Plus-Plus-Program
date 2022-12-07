@@ -1,0 +1,1 @@
+﻿// Tính tổng các phần tử của mảng a số nguyên có n phần tử

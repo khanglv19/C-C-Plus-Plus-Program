@@ -1,0 +1,1 @@
+﻿/*Nhập tuổi của một người, in ra năm sinh của người đó.*/

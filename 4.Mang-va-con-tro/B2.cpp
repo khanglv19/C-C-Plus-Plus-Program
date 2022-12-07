@@ -1,0 +1,1 @@
+﻿// Viết chương trình để nhập ma trận 2x3 và trừ tất cả các phần tử 2 đơn vị.

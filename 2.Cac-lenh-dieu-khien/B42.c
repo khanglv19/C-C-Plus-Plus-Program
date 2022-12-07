@@ -1,0 +1,1 @@
+﻿//Viết chương trình đếm số nguyên dương nhỏ hơn n chia hết cho 3, n là số nguyên dương nhập từ bàn phím.

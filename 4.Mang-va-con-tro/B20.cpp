@@ -1,0 +1,1 @@
+﻿//Chèn một phần tử x vô vị trí thứ i của mảng a

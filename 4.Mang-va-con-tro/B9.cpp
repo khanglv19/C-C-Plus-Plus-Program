@@ -1,0 +1,1 @@
+﻿// Viết hàm xuất các phần tuer ở vị trí chẵn (hoặc lẻ) của mảng số nguyên n phần tử.

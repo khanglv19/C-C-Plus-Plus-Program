@@ -1,0 +1,1 @@
+﻿//Xóa phần tử thứ i trong mảng a có n phần tử.

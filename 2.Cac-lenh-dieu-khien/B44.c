@@ -1,0 +1,1 @@
+﻿//Xuất tất cả các số nguyên có đúng 3 chữ số và tổng các chữ số là chẵn.

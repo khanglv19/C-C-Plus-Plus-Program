@@ -1,0 +1,1 @@
+﻿//Tạo mảng b chứa tất cả các số dương của mảng a

@@ -1,0 +1,1 @@
+﻿//Tìm số n lớn nhất sao cho 1+2+3+...+n<M với N nhập từ bàn phím.

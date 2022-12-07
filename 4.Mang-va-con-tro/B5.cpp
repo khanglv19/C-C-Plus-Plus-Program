@@ -1,0 +1,1 @@
+﻿// Nhập mảng a gồm n phần tử sao cho các số chẵn và lẻ xen kẽ nhau

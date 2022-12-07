@@ -1,0 +1,1 @@
+﻿//Tìm kiếm vị trí đầu tiên của x trong mảng a có n phần tử.

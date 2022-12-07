@@ -1,0 +1,1 @@
+﻿//Xuất tất cả các số nguyên là bội của 7 và có đúng 2 chữ số

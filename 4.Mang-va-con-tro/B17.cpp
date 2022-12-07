@@ -1,0 +1,1 @@
+﻿//Tính giá trị trung bình của các phần tử trong mảng số nguyên n phần tử.

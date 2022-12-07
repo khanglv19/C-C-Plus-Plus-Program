@@ -1,0 +1,1 @@
+﻿// Nhập mảng a gồm n phần tử số nguyên sao cho các số nguyên có thứ tự tăng.

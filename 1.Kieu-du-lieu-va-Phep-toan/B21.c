@@ -1,0 +1,1 @@
+﻿/*Nhập vào 1 ký tự, kiểm tra ký tự đó là: ký tự in hoa, ký tự thường hay ký tự khác.*/
