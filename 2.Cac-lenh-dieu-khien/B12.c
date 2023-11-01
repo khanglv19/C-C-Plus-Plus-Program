@@ -8,7 +8,7 @@ void main()
 	int a, b, luaChon;
 
 	printf("\tNhap hai so nguyen: ");
-	scanf_s("%d%d", &a, &b);
+	scanf("%d%d", &a, &b);
 
 	printf("\n\t\tMENU");
 	printf("\n\t1. Cong");
@@ -18,7 +18,7 @@ void main()
 	printf("\n\t0. Thoat");
 
 	printf("\n\n\tMoi ban chon: ");
-	scanf_s("%d", &luaChon);
+	scanf("%d", &luaChon);
 
 	switch (luaChon)
 	{
@@ -40,5 +40,5 @@ void main()
 		printf("\n\tKhong ton tai lua chon hop le!");
 		break;
 	}
-	_getch();
+	getch();
 }

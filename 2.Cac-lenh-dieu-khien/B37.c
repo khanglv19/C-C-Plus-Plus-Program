@@ -25,6 +25,7 @@ void main()
 	scanf("%f", &dck);
 
 	dhp = (0.2 * dtl) + (0.3 * dgk) + (0.5 * dck);
+
 	printf("\nDiem hoc phan: %.2f\n", dhp);
 
 	if (dhp < 4)

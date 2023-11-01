@@ -8,7 +8,7 @@ void main()
 	int a, b;
 
 	printf("Nhap a, b: ");
-	scanf_s("%d%d", &a, &b);
+	scanf("%d%d", &a, &b);
 
 	float x;
 
@@ -24,5 +24,5 @@ void main()
 		x = -b / a;
 		printf("\nPhuong trinh co nghiem la %.f", x);
 	}
-	_getch();
+	getch();
 }

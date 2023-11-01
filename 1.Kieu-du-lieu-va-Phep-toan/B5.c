@@ -8,11 +8,15 @@ F(x) = -b + sqrt(b^2 - 4ac) / 2a			G(x) = -b - sqrt(b^2 - 4ac) / 2a */
 void main()
 {
 	int a, b, c;
+
 	printf("Nhap ba so nguyen: ");
-	scanf_s("%d%d%d", &a, &b, &c);
+	scanf("%d%d%d", &a, &b, &c);
+
 	int f, g;
-	f = (-b + sqrt((float)b*b - 4 * a*c)) / (2 * a);
-	g = (-b - sqrt(pow((float)b,2) - 4 * a*c)) / (2 * a);
+
+	f = (-b + sqrt((float)b * b - 4 * a * c)) / (2 * a);
+	g = (-b - sqrt(pow((float)b, 2) - 4 * a * c)) / (2 * a);
+
 	printf("\n\nF(x) = %.2d\tG(x) = %.2d", f, g);
-	_getch();
+	getch();
 }

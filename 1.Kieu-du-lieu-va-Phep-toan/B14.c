@@ -10,18 +10,23 @@ void main()
 {
 	float tienGio, tienNuoc, tongTien;
 	int gioVao, gioRa, soBinhNuoc;
+
 	printf("\nNhap gio vao: ");
-	scanf_s("%d", &gioVao);
+	scanf("%d", &gioVao);
 	printf("\nNhap gio ra: ");
-	scanf_s("%d", &gioRa);
+	scanf("%d", &gioRa);
 	printf("\nNhap so binh nuoc: ");
-	scanf_s("%d", &soBinhNuoc);
+	scanf("%d", &soBinhNuoc);
+
 	printf("\n-------------------------------------\n");
+
 	tienGio = (gioRa - gioVao) * 200000;
 	printf("\nTien gio la: %.f", tienGio);
+
 	tienNuoc = soBinhNuoc * 20000;
 	printf("\nTien nuoc la: %.f", tienNuoc);
+
 	tongTien = tienGio + tienNuoc;
 	printf("\nTong tien la: %.f", tongTien);
-	_getch();
+	getch();
 }

@@ -8,7 +8,7 @@ void main()
 	int a, b;
 
 	printf("Nhap hai so bat ky: ");
-	scanf_s("%d%d", &a, &b);
+	scanf("%d%d", &a, &b);
 
 	if (a > b)
 		printf("\nSo lon nhat la %d", a);
@@ -19,5 +19,5 @@ void main()
 		else
 			printf("\nHai so bang nhau");
 	}
-	_getch();
+	getch();
 }

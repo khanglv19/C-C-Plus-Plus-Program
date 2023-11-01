@@ -15,6 +15,7 @@ void main()
         s = s + i;
         i++;
     }
+
     printf("Tong cac so tu nhien nho hon n: %d", s);
     getch();
 }

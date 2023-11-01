@@ -9,7 +9,7 @@ void main()
 	int a, b;
 
 	printf("Nhap hai so nguyen: ");
-	scanf_s("%d%d", &a, &b);
+	scanf("%d%d", &a, &b);
 
 	if (a > b)
 		printf("\n%d lon hon %d", a, b);
@@ -20,5 +20,5 @@ void main()
 		else
 			printf("\n%d bang %d", a, b);
 	}
-	_getch();
+	getch();
 }

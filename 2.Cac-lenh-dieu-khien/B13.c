@@ -7,5 +7,5 @@ void main()
 {
 	for (int i = 1; i <= 100; i++)
 		printf("%4d", i);
-	_getch();
+	getch();
 }

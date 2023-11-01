@@ -8,7 +8,7 @@ void main()
 	int n;
 
 	printf("Nhap vao mot so nguyen: ");
-	scanf_s("%d", &n);
+	scanf("%d", &n);
 
 	if (n > 0)
 		printf("\nSo vua nhap la so duong (+)");
@@ -19,5 +19,5 @@ void main()
 		else
 			printf("\nSo vua nhap khong la so duong cung khong la so am");
 	}
-	_getch();
+	getch();
 }

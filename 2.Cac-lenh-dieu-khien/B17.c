@@ -10,7 +10,7 @@ void main()
 	do
 	{
 		printf("\nNhap vao so n: ");
-		scanf_s("%d", &n);
+		scanf("%d", &n);
 	} while (n <= 0);
 
 	int s = 1;
@@ -21,5 +21,5 @@ void main()
 		n--;
 	}
 	printf("Ket qua la: %d", s);
-	_getch();
+	getch();
 }

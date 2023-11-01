@@ -9,5 +9,5 @@ void main()
 	for (int i = 1; i <= 20; i++)
 		tong += i;
 	printf("\n\tKet qua la: %d", tong);
-	_getch();
+	getch();
 }

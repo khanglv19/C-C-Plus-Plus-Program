@@ -9,6 +9,7 @@ char *delete_space(char *str, char *result)
     int pos = 0;
 
     const int len = strlen(str); /*Tìm độ dài chuỗi ban đầu*/
+
     for (int i = 0; i < len; i++)
     {
         char c = str[i];
@@ -28,9 +29,12 @@ char *delete_space(char *str, char *result)
 void main()
 {
     char str[50];
+
     printf("Nhap vao chuoi ky tu: ");
     gets(str);
+
     char result[100];
+
     printf("%s\n", (delete_space(str, result)));
 
     getch();

@@ -10,9 +10,9 @@ void main()
 	int soLuong;
 
 	printf("Nhap don gia: ");
-	scanf_s("%f", &donGia);
+	scanf("%f", &donGia);
 	printf("Nhap so luong: ");
-	scanf_s("%d", &soLuong);
+	scanf("%d", &soLuong);
 
 	thanhTien = donGia * soLuong;
 
@@ -21,5 +21,5 @@ void main()
 
 	tongTienPhaiTra = thanhTien - giamGia;
 	printf("\nSo tien phai tra la: %.3f", tongTienPhaiTra);
-	_getch();
+	getch();
 }

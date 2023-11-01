@@ -8,11 +8,11 @@ void main()
 	int n, tich = 1;
 
 	printf("\n\tNhap mot so nguyen n: ");
-	scanf_s("%d", &n);
+	scanf("%d", &n);
 
 	for (int i = 1; i <= n; i++)
 		tich = tich * i;
 
 	printf("\n\t\tKet qua la: %d", tich);
-	_getch();
+	getch();
 }

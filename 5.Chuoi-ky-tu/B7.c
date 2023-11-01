@@ -1,4 +1,4 @@
-﻿//Đếm số các ký tự đặc biệt (không phải ký tự và ký số) trong chuỗi.
+﻿// Đếm số các ký tự đặc biệt (không phải ký tự và ký số) trong chuỗi.
 
 #include <stdio.h>
 #include <conio.h>
@@ -11,6 +11,7 @@ void main()
 
     printf("Nhap chuoi: ");
     gets(str);
+
     l = strlen(str);
 
     while (i < l)

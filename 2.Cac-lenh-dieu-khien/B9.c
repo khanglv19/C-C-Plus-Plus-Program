@@ -12,9 +12,9 @@ void main()
 	int month, year;
 
 	printf("Nhap nam: ");
-	scanf_s("%d", &year);
+	scanf("%d", &year);
 	printf("Nhap thang: ");
-	scanf_s("%d", &month);
+	scanf("%d", &month);
 
 	if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
 		printf("\nThang %d co 31 ngay", month);
@@ -30,5 +30,5 @@ void main()
 				printf("\nThang 2 co 28 ngay");
 		}
 	}
-	_getch();
+	getch();
 }

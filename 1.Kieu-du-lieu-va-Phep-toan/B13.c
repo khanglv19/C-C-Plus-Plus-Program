@@ -7,8 +7,10 @@ ngược lại thì in ra ký tự tương ứng với mã đó.*/
 void main()
 {
 	int as;
+
 	printf("\nNhap ma ASCII: ");
-	scanf_s("%d", &as);
+	scanf("%d", &as);
+
 	((as >= 65 && as <= 90) || (as >= 97 && as <= 122)) ? (printf("La chu cai")) : (printf("Ky tu: %c", as));
-	_getch();
+	getch();
 }

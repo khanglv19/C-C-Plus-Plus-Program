@@ -68,10 +68,14 @@ void chuanHoa(char a[])
 void main()
 {
     char a[100];
+
     printf("Moi ban nhap chuoi:");
     gets(a);
+
     chuanHoa(a);
+
     printf("Chuoi duoc chuan hoa:");
     puts(a);
+
     getch();
 }

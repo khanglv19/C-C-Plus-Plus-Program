@@ -9,11 +9,11 @@ void main()
 	int year;
 
 	printf("Nhap nam: ");
-	scanf_s("%d", &year);
+	scanf("%d", &year);
 
 	if ((year % 400 == 0) || (year % 4 == 0) && (year / 100 != 0))
 		printf("\nNam nhuan");
 	else
 		printf("\nNam khong nhuan");
-	_getch();
+	getch();
 }

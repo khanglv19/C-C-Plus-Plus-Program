@@ -6,31 +6,37 @@ Hãy in ra màn hình kết quả của phép toán vừa nhập với 2 số h�
 
 void main()
 {
-	int a, b, ketQua = 0;
+	int a, b;
+	char op;
+	float result;
 
-	printf("\nNhap vao hai so nguyen: ");
-	scanf_s("%d%d", &a, &b);
+	printf("Nhap vao hai so nguyen: ");
+	scanf("%d %d", &a, &b);
+	printf("Nhap vao phep toan ban (+, -, *, /): ");
+	scanf(" %c", &op); // Thêm một khoảng trắng trước %c để loại bỏ ký tự xuống dòng
 
-	char phepToan;
-
-	printf("\nNhap vao phep toan ban muon tinh: ");
-	_flushall();
-	scanf_s("%C", &phepToan);
-
-	switch (phepToan)
+	switch (op)
 	{
-	case '+': ketQua = a + b;
+	case '+':
+		result = a + b;
 		break;
-	case '-': ketQua = a - b;
+	case '-':
+		result = a - b;
 		break;
-	case '*': ketQua = a*b;
+	case '*':
+		result = a * b;
 		break;
-	case '/': ketQua = a / b;
+	case '/':
+		if (b == 0)
+		{
+			printf("Khong the chia cho 0\n");
+		}
+		result = (float)a / b; // Ép kiểu a về float để có kết quả chính xác
 		break;
 	default:
-		break;
+		printf("Phep toan khong hop le\n");
 	}
-	
-	printf("\nKet qua la: %d", ketQua);
-	_getch();
+
+	printf("Ket qua cua %d %c %d la: %.2f\n", a, op, b, result);
+	getch();
 }

@@ -15,6 +15,7 @@ void main()
         if (i % 2 == 0)
             s = s + i;
     }
+
     printf("Tong cac so chan nho hon n: %d", s);
     getch();
 }

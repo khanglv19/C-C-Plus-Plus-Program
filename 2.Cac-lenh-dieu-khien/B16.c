@@ -12,5 +12,5 @@ void main()
 			tong += i;
 
 	printf("\n\tTong la: %d", tong);
-	_getch();
+	getch();
 }

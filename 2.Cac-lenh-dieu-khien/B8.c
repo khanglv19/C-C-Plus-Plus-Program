@@ -9,11 +9,11 @@ void main()
 	float a, b, c;
 
 	printf("\nNhap he so bac 2, a = ");
-	scanf_s("%f", &a);
+	scanf("%f", &a);
 	printf("\nNhap he so bac 1, b = ");
-	scanf_s("%f", &b);
+	scanf("%f", &b);
 	printf("\nNhap so hang tu do, c = ");
-	scanf_s("%f", &c);
+	scanf("%f", &c);
 
 	// Kiểm tra các hệ số
 	if (a == 0)
@@ -51,5 +51,5 @@ void main()
 	{
 		printf("\n\tPhuong trinh vo nghiem!");
 	}
-	_getch();
+	getch();
 }

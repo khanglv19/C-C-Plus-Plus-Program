@@ -8,11 +8,11 @@ void main()
 	int n;
 
 	printf("Nhap mot so nguyen: ");
-	scanf_s("%d", &n);
+	scanf("%d", &n);
 
 	if (n % 2 == 0)
 		printf("\nSo vua nhap la so chan");
 	else
 		printf("\nSo vua nhap la so le");
-	_getch();
+	getch();
 }

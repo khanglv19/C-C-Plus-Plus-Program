@@ -18,7 +18,7 @@ void main()
 	printf("\n3. Hinh tron");
 	printf("\n0. Thoat");
 	printf("\n\nXin moi chon: ");
-	scanf_s("%d", &chon);
+	scanf("%d", &chon);
 
 	double length, width, edge, radius, perimeter, area;
 
@@ -26,21 +26,21 @@ void main()
 	{
 	case 1:
 		printf("\nNhap chieu dai, chieu rong cua hinh chu nhat: ");
-		scanf_s("%f%f", &length, &width);
+		scanf("%f%f", &length, &width);
 		perimeter = (length + width) * 2;
 		area = length * width;
 		printf("\n\nChu vi = %.2f\t\tDien tich = %.2f", perimeter, area);
 		break;
 	case 2:
 		printf("\nNhap vao canh cua hinh vuong: ");
-		scanf_s("%f", &edge);
+		scanf("%f", &edge);
 		perimeter = 4 * edge;
 		area = edge * edge;
 		printf("\nChu vi = %.2f\t\tDien tich = %.2f", perimeter, area);
 		break;
 	case 3:
 		printf("\nNhap vao ban kinh cua hinh tron: ");
-		scanf_s("%f", &radius);
+		scanf("%f", &radius);
 		perimeter = 2 * PI * radius;
 		area = PI * pow(radius, 2);
 		printf("\nChu vi = %.2f\t\tDien tich = %.2f", perimeter, area);
@@ -50,5 +50,5 @@ void main()
 	default:
 		break;
 	}
-	_getch();
+	getch();
 }

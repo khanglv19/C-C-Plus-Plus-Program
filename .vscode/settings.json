@@ -3,5 +3,7 @@
         "conio.h": "c",
         "ctype.h": "c",
         "string.h": "c"
-    }
+    },
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
 }
