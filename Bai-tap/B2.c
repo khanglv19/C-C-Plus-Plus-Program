@@ -16,7 +16,7 @@ void main()
 	int n;
 
 	printf("Nhap mot so nguyen duong: ");
-	scanf_s("%d", &n);
+	scanf("%d", &n);
 
 	printf("\n===========================================================================\n");
 	printf("\n\tKIEM TRA SO DOI XUNG\n");
@@ -34,7 +34,7 @@ void main()
 	printf("\n===========================================================================\n");
 	printf("\n\tTINH GIA TRI BIEU THUC: S = sqrt(1^3) + sqrt(2^3) + ... + sqrt(n^3)\n");
 	printf("\nKet qua: %.2f", tongS2(n));
-	_getch();
+	getch();
 }
 
 int kiemTraDoiXung(int n)

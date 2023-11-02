@@ -21,5 +21,5 @@ void main()
 		printf("Phu cap: 400");
 	else
 		printf("Phu cap: 0");
-	_getch();
+	getch();
 }
