@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int bang1 = 1, bang2 = 2, bang3 = 3, bang4 = 4, bang5 = 5, bang6 = 6, bang7 = 7, bang8 = 8, bang9 = 9;
 
@@ -26,5 +26,5 @@ void main()
 			printf("%d x %d = %d\t", k, viTri, k * viTri);
 		printf("\n");
 	}
-	_getch();
+	return 0;
 }

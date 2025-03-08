@@ -32,5 +32,4 @@ int main()
     printf("S(%lf, %d) = %lf\n", x, n, result);
 
     return 0;
-    getch();
 }

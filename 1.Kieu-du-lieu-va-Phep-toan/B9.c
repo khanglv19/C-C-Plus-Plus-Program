@@ -4,7 +4,7 @@
 #include <conio.h>
 #include <math.h>
 
-void main()
+int main()
 {
 	float edge;
 
@@ -19,5 +19,5 @@ void main()
 	diagonal = sqrt(pow(edge, 2) + pow(edge, 2));
 
 	printf("\nChu vi = %.2f\t\tDien tich = %.2f\t\tDuong cheo = %.2f", perimeter, area, diagonal);
-	getch();
+	return 0;
 }

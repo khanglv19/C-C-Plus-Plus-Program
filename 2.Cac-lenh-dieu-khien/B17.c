@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int n, tong = 0;
 
@@ -21,5 +21,5 @@ void main()
 		n--;
 	}
 	printf("Ket qua la: %d", s);
-	getch();
+	return 0;
 }

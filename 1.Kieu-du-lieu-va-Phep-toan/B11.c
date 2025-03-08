@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int a, b, c;
 
@@ -16,5 +16,5 @@ void main()
 	int min = (min1 < c) ? min1 : c;
 
 	printf("\nSo lon nhat la: %d\t\tSo nho nhat la: %d", max, min);
-	getch();
+	return 0;
 }

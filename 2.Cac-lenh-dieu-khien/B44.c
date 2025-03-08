@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
     printf("Cac so nguyen co dung 3 chu so va tong cac chu so la chan:\n");
 
@@ -20,5 +20,5 @@ void main()
         }
     }
 
-    getch();
+    return 0;
 }

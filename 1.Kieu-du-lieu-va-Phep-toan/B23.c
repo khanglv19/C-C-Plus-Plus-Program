@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
     int a, b;
     float x;
@@ -20,5 +20,5 @@ void main()
     x = (float)-b / a;
 
     printf("Nghiem cua phuong trinh %dx + %d = 0 la: %f", a, b, x);
-    getch();
+    return 0;
 }

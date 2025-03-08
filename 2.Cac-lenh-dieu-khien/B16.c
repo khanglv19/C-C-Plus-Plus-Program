@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int tong = 0;
 
@@ -12,5 +12,5 @@ void main()
 			tong += i;
 
 	printf("\n\tTong la: %d", tong);
-	getch();
+	return 0;
 }

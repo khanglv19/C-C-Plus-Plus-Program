@@ -1,50 +1,74 @@
-﻿// Viết hàm tính tổng các phẩn tử chẵn (hoặc lẻ) của mảng số nguyên n phần tử.
+﻿// Tìm số âm lớn nhất / số dương nhỏ nhất trên mảng số nguyên n phần tử
 
 #include <stdio.h>
-#include <conio.h>
-#define MAXSIZE 10
+#include <stdlib.h>
+#include <limits.h>
 
-void nhapMang(int a[], int &n);
-void xuatMang(int a[], int n);
-int tinhTongCacPhanTuChan(int a[], int n);
-
-void main()
+int timSoAmLonNhat(int *a, int n)
 {
-	int a[MAXSIZE], n;
-	nhapMang(a, n);
-	xuatMang(a, n);
-	printf("\nTong cac phan tu chan la %d", tinhTongCacPhanTuChan(a,n));
-	_getch();
+    int maxAm = INT_MIN;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] < 0 && a[i] > maxAm)
+        {
+            maxAm = a[i];
+        }
+    }
+    return maxAm;
 }
 
-void nhapMang(int a[], int &n)
+int timSoDuongNhoNhat(int *a, int n)
 {
-	printf("\nCho biet so phan tu (kich thuoc) cua mang: ");
-	scanf_s("%d", &n);
-	printf("\n==============================================\n");
-	for (int i = 0; i < n; i++)
-	{
-		printf("\nNhap phan tu a[%d]: ", i);
-		scanf_s("%d", &a[i]);
-	}
-	printf("\n==============================================\n");
+    int minDuong = INT_MAX;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] > 0 && a[i] < minDuong)
+        {
+            minDuong = a[i];
+        }
+    }
+    return minDuong;
 }
 
-void xuatMang(int a[], int n)
+int main()
 {
-	printf("\n");
-	for (int i = 0; i < n; i++)
-	printf("%4d", a[i]);
-	printf("\n\n==============================================\n");
-}
+    int n;
 
-int tinhTongCacPhanTuChan(int a[], int n)
-{
-	int tong = 0;
-	for (int i = 0; i < n; i++)
-	{
-		if (a[i] % 2 == 0)
-			tong += a[i];
-	}
-	return tong;
+    do
+    {
+        printf("Nhap so phan tu cua mang (n > 0): ");
+        scanf("%d", &n);
+    } while (n <= 0);
+
+    int *a = (int *)malloc(n * sizeof(int));
+
+    if (a == NULL)
+    {
+        printf("Khong the cap phat bo nho!\n");
+        return 1;
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("Nhap phan tu a[%d]: ", i);
+        scanf("%d", &a[i]);
+    }
+
+    int maxAm = timSoAmLonNhat(a, n);
+    int minDuong = timSoDuongNhoNhat(a, n);
+
+    if (maxAm != INT_MIN)
+        printf("So am lon nhat trong mang: %d\n", maxAm);
+    else
+        printf("Khong co so am trong mang.\n");
+
+    if (minDuong != INT_MAX)
+        printf("So duong nho nhat trong mang: %d\n", minDuong);
+    else
+        printf("Khong co so duong trong mang.\n");
+
+    free(a);
+    return 0;
 }

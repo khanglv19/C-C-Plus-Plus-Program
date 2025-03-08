@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int month, year;
 
@@ -30,5 +30,5 @@ void main()
 				printf("\nThang 2 co 28 ngay");
 		}
 	}
-	getch();
+	return 0;
 }

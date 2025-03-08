@@ -4,7 +4,7 @@
 #include <conio.h>
 #include <time.h>
 
-void main()
+int main()
 {
     int namSinh, namHienTai, tuoi;
 
@@ -23,5 +23,5 @@ void main()
     else
         printf("Con tuoi di hoc");
 
-    getch();
+    return 0;
 }

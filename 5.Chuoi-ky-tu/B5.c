@@ -4,7 +4,7 @@
 #include <conio.h>
 #include <string.h>
 
-void main()
+int main()
 {
     char str[50] = "Ha Noi,Ninh Binh,Nam Dinh,Thanh Hoa";
     char *p;
@@ -26,5 +26,5 @@ void main()
         }
     }
 
-    getch();
+    return 0;
 }

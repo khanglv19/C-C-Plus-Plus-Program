@@ -4,7 +4,7 @@
 #include <conio.h>
 #include <math.h>
 
-void main()
+int main()
 {
 	float a, b, c;
 
@@ -51,5 +51,5 @@ void main()
 	{
 		printf("\n\tPhuong trinh vo nghiem!");
 	}
-	getch();
+	return 0;
 }

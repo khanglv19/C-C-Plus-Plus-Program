@@ -1,4 +1,4 @@
-/*Nhập vào chuỗi họ, tên:
+/* Nhập vào chuỗi họ, tên:
 - Xuất họ của chuỗi đó.
 - Kiểm tra chuỗi trên có phải tên là "Lan".
 - Xuất từng thành phần của họ tên: Họ, tên lót, tên.
@@ -48,6 +48,7 @@ int main()
     {
         printf("%s\n", parts[i]); // In ra từng thành phần
     }
+
     if (strcmp(parts[1], "Thi") == 0)
     { // Kiểm tra tên lót là "Thị"
         printf("Ten nhap vao la nu!\n");
@@ -62,5 +63,4 @@ int main()
     }
 
     return 0;
-    getch();
 }

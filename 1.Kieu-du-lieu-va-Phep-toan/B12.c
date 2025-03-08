@@ -12,7 +12,7 @@ Sau đó, để tính tiền khách phải trả, chúng ta có thể tính số
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int start, end;
 
@@ -27,5 +27,5 @@ void main()
 	int total_price = weeks * 650 + remaining_days * 100;
 
 	printf("So tien khach phai tra la: %d\n", total_price);
-	getch();
+	return 0;
 }

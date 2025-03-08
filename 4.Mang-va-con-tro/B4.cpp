@@ -1,36 +1,66 @@
-﻿// Viết hàm xuất mảng một chiều gồm n phần tử.
+﻿// Nhập mảng a gồm n phần tử sao cho các số chẵn và lẻ xen kẽ nhau
 
 #include <stdio.h>
-#include <conio.h>
-#define MAXSIZE 10
+#include <stdlib.h>
 
-void nhapMang(int a[], int &n);
-void xuatMang(int a[], int n);
-
-void main()
+void nhapMangXenKe(int *a, int n)
 {
-	int a[MAXSIZE], n;
-	nhapMang(a, n);
-	xuatMang(a, n);
-	_getch();
+    int i;
+
+    for (i = 0; i < n; i++)
+    {
+        if (i % 2 == 0)
+        {
+            // Vị trí chẵn -> nhập số chẵn
+            do
+            {
+                printf("Nhap so chan cho phan tu a[%d]: ", i);
+                scanf("%d", &a[i]);
+            } while (a[i] % 2 != 0);
+        }
+        else
+        {
+            // Vị trí lẻ -> nhập số lẻ
+            do
+            {
+                printf("Nhap so le cho phan tu a[%d]: ", i);
+                scanf("%d", &a[i]);
+            } while (a[i] % 2 == 0);
+        }
+    }
 }
 
-void nhapMang(int a[], int &n)
+void xuatMang(int *a, int n)
 {
-	printf("\nCho biet so phan tu (kich thuoc) cua mang: ");
-	scanf_s("%d", &n);
-	printf("\n==============================================\n");
-	for (int i = 0; i < n; i++)
-	{
-		printf("\nNhap phan tu a[%d]: ", i);
-		scanf_s("%d", &a[i]);
-	}
-	printf("\n==============================================\n");
+    printf("Mang da nhap: ");
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
 }
 
-void xuatMang(int a[], int n)
+int main()
 {
-	printf("\n");
-	for (int i = 0; i < n; i++)
-	printf("%4d", a[i]);
+    int n;
+
+    do
+    {
+        printf("Nhap so phan tu cua mang (n > 0): ");
+        scanf("%d", &n);
+    } while (n <= 0);
+
+    int *a = (int *)malloc(n * sizeof(int)); // cấp phát động bằng malloc để tránh lỗi kích thước không cố định
+    if (a == NULL)
+    {
+        printf("Khong the cap phat bo nho!\n");
+        return 1;
+    }
+
+    nhapMangXenKe(a, n);
+    xuatMang(a, n);
+
+    free(a);
+    return 0;
 }

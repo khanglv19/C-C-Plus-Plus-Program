@@ -5,7 +5,7 @@ Gợi ý: 3 số là độ dài 3 cạnh một tam giác nếu như tổng 2 c�
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
     int a, b, c;
 
@@ -44,5 +44,5 @@ void main()
     {
         printf("Ba so khong phai la đo dai 3 canh cua tam giac\n");
     }
-    getch();
+    return 0;
 }

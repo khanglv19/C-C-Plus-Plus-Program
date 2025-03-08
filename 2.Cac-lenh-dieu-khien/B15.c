@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int n, tich = 1;
 
@@ -14,5 +14,5 @@ void main()
 		tich = tich * i;
 
 	printf("\n\t\tKet qua la: %d", tich);
-	getch();
+	return 0;
 }

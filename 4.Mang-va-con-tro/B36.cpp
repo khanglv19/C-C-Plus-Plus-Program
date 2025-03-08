@@ -1,1 +1,0 @@
-﻿//Viết chương trình tính tổng dòng thứ i và cột thứ j của ma trận số nguyên m x n.

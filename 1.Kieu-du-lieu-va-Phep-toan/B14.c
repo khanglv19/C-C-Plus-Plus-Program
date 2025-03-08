@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	float tienGio, tienNuoc, tongTien;
 	int gioVao, gioRa, soBinhNuoc;
@@ -28,5 +28,5 @@ void main()
 
 	tongTien = tienGio + tienNuoc;
 	printf("\nTong tien la: %.f", tongTien);
-	getch();
+	return 0;
 }

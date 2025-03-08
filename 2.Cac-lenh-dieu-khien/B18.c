@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int n;
 
@@ -20,5 +20,5 @@ void main()
 	}
 
 	printf("Tong la: %.4f\n", sum);
-	getch();
+	return 0;
 }

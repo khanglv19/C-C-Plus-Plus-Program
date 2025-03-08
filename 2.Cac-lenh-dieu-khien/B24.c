@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
     int n;
 
@@ -15,5 +15,5 @@ void main()
         if (i % 2 != 0)
             printf("%d ", i);
     }
-    getch();
+    return 0;
 }

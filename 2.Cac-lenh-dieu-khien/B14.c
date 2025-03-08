@@ -3,11 +3,11 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int tong = 0;
 	for (int i = 1; i <= 20; i++)
 		tong += i;
 	printf("\n\tKet qua la: %d", tong);
-	getch();
+	return 0;
 }

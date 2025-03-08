@@ -5,7 +5,8 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main(){
+int main()
+{
 	char tenSP;
 	int sl;
 	float dg;
@@ -26,5 +27,5 @@ void main(){
 	thueGTGT = (double)0.1 * thanhTien;
 	printf("\nThue GTGT: %.f", thueGTGT);
 
-	getch();
+	return 0;
 }

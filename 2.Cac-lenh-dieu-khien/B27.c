@@ -34,7 +34,7 @@ int ucln(int a, int b)
 	return a;
 }
 
-void main()
+int main()
 {
 	int x, y;
 
@@ -46,5 +46,5 @@ void main()
 
 	printf("UCLN cua %d va %d la: %d\n", x, y, u);
 	printf("BCNN cua %d va %d la: %d\n", x, y, v);
-	getch();
+	return 0;
 }

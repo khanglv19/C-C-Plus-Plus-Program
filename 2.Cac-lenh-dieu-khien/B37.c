@@ -12,7 +12,7 @@ Hãy cho biết điểm chữ của môn học khi người dùng nhập vào đ
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	float dtl, dgk, dck, dhp;
 	char dc;
@@ -39,5 +39,5 @@ void main()
 	else if (dhp >= 8.5)
 		printf("Diem chu: A");
 
-	getch();
+	return 0;
 }

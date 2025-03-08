@@ -18,7 +18,7 @@ int countDivisors(int n)
     return count;
 }
 
-void main()
+int main()
 {
     int n;
     printf("Nhap mot so nguyen duong: ");
@@ -34,5 +34,5 @@ void main()
         printf("So nguyen duong %d co %d uoc.\n", n, divisorCount);
     }
 
-    getch();
+    return 0;
 }

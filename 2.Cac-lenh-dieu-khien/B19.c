@@ -4,7 +4,7 @@
 #include <conio.h>
 #include <math.h>
 
-void main()
+int main()
 {
 	int n, tong = 0;
 
@@ -15,5 +15,5 @@ void main()
 		tong += pow((float)i, 2);
 
 	printf("\tKet qua la: %d", tong);
-	_getch();
+	return 0;
 }

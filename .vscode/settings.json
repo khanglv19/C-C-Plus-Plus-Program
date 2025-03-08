@@ -1,9 +1,10 @@
 {
-    "files.associations": {
-        "conio.h": "c",
-        "ctype.h": "c",
-        "string.h": "c"
-    },
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true
+  "files.associations": {
+    "conio.h": "c",
+    "ctype.h": "c",
+    "string.h": "c",
+    "stdio.h": "c"
+  },
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true
 }

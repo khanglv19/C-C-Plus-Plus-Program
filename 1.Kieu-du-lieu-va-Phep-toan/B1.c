@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	float a, b;
 
@@ -17,5 +17,5 @@ void main()
 
 	printf("\n");
 	printf("Tong = %.2f\tHieu = %.2f\tTich = %.2f\tThuong = %.2f", tong, hieu, tich, thuong);
-	getch();
+	return 0;
 }

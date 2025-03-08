@@ -5,7 +5,7 @@ F(x) = -b + sqrt(b^2 - 4ac) / 2a			G(x) = -b - sqrt(b^2 - 4ac) / 2a */
 #include <conio.h>
 #include <math.h>
 
-void main()
+int main()
 {
 	int a, b, c;
 
@@ -18,5 +18,5 @@ void main()
 	g = (-b - sqrt(pow((float)b, 2) - 4 * a * c)) / (2 * a);
 
 	printf("\n\nF(x) = %.2d\tG(x) = %.2d", f, g);
-	getch();
+	return 0;
 }

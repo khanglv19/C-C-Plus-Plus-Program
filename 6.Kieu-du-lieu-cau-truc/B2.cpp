@@ -12,97 +12,171 @@ d. Viết hàm sắp xếp mảng giảm dần theo giá bán.
 e. Viết hàm xuất các điện thoại có số lượng < 10.
 f. Xuất các điện thoại có mã số bắt đầu là <<IP>>.
 g. Xuất các điện thoại thuộc hãng <<SAMSUNG>>.
-h. Đếm số lượng sản phẩm của từng hãng.*/
+h. Đếm số lượng sản phẩm của từng hãng. */
 
 #include <stdio.h>
-#include <conio.h>
+#include <stdlib.h>
 #include <string.h>
-#include <string>
-#include <fstream>
 
-using namespace std;
+#define MAX_PHONE 100
 
-struct DIENTHOAI
+typedef struct
 {
-	char ma[11];
-	char ten[21];
-	char nhaSX[21];
-	float gia;
+	char maDienThoai[11];
+	char tenDienThoai[21];
+	char nhaSanXuat[21];
+	float giaBan;
 	int soLuong;
-};
+} DIENTHOAI;
 
-void nhapThongTinTuFile(DIENTHOAI &dt);
-void xuat1DienThoai(DIENTHOAI dt);
-
-void main()
+// Đọc dữ liệu từ file
+int docFileDienThoai(const char *filename, DIENTHOAI phones[], int *n)
 {
-	DIENTHOAI dt;
-	nhapThongTinTuFile(dt);
-	//xuat1DienThoai(dt);
-	_getch();
+	FILE *file = fopen(filename, "r");
+	if (file == NULL)
+	{
+		printf("Khong the mo file %s!\n", filename);
+		return 0;
+	}
+
+	*n = 0;
+
+	while (fscanf(file, "%10s %20s %20s %f %d\n", phones[*n].maDienThoai, phones[*n].tenDienThoai,
+				  phones[*n].nhaSanXuat, &phones[*n].giaBan, &phones[*n].soLuong) == 5)
+	{
+		(*n)++;
+	}
+
+	fclose(file);
+	return 1;
 }
 
-void nhapThongTinTuFile(DIENTHOAI &dt)
+// Xuất thông tin điện thoại
+void xuatDienThoai(DIENTHOAI phones[], int n)
 {
-	int n;
-	ifstream f;
-	f.open("D:\\C_C-Plus-Plus_Program\\DienThoai.txt", ios::in);
-	f >> n;
 	for (int i = 0; i < n; i++)
 	{
-		f >> dt.ma;
-		f >> dt.ten;
-		f >> dt.nhaSX;
-		f >> dt.gia;
-		f >> dt.soLuong;
+		printf("Ma: %s, Ten: %s, Hang: %s, Gia: %.2f, So luong: %d\n",
+			   phones[i].maDienThoai, phones[i].tenDienThoai, phones[i].nhaSanXuat,
+			   phones[i].giaBan, phones[i].soLuong);
 	}
-	f.close();
-	for (int i = 0; i < n; i++)
-		xuat1DienThoai(dt);
 }
 
-void xuat1DienThoai(DIENTHOAI dt)
-{
-	printf("\n\t%10s\t%20s\t%20s%7.2f\t%5d", dt.ma, dt.ten, dt.nhaSX, dt.gia, dt.soLuong);
-}
-
-void swap(DIENTHOAI x, DIENTHOAI y)
-{
-	DIENTHOAI temp = x;
-	x = y;
-	y = temp;
-}
-
-void sapXepGiamTheoGia(DIENTHOAI a[], int n)
+// Sắp xếp giảm dần theo giá bán
+void sapXepGiamTheoGia(DIENTHOAI phones[], int n)
 {
 	for (int i = 0; i < n - 1; i++)
+	{
 		for (int j = i + 1; j < n; j++)
-			if (a[i].gia < a[j].gia)
-				swap(a[i], a[j]);
+		{
+			if (phones[i].giaBan < phones[j].giaBan)
+			{
+				DIENTHOAI temp = phones[i];
+				phones[i] = phones[j];
+				phones[j] = temp;
+			}
+		}
+	}
 }
 
-void xuatDienThoaiSLNhoHon10(DIENTHOAI a[], int n)
+// Xuất điện thoại có số lượng < 10
+void xuatSoLuongNhoHon10(DIENTHOAI phones[], int n)
 {
 	for (int i = 0; i < n; i++)
-		if (a[i].soLuong < 10)
-			xuat1DienThoai(a[i]);
+	{
+		if (phones[i].soLuong < 10)
+		{
+			printf("%s\n", phones[i].tenDienThoai);
+		}
+	}
 }
 
-void xuatDienThoaiMaBatDauLa_IP(DIENTHOAI a[], int n)
+// Xuất điện thoại có mã bắt đầu bằng "IP"
+void xuatMaBatDauIP(DIENTHOAI phones[], int n)
 {
 	for (int i = 0; i < n; i++)
-		if (a[i].ma[0] == 'I'&&a[i].ma[1] == 'P')
-			xuat1DienThoai(a[i]);
+	{
+		if (strncmp(phones[i].maDienThoai, "IP", 2) == 0)
+		{
+			printf("%s\n", phones[i].tenDienThoai);
+		}
+	}
 }
 
-void xuatDienThoaiSamSung(DIENTHOAI a[], int n)
+// Xuất điện thoại của hãng SAMSUNG
+void xuatDienThoaiSamsung(DIENTHOAI phones[], int n)
 {
 	for (int i = 0; i < n; i++)
-		if (strstr(a[i].nhaSX, "Sam_Sung") != NULL)
-			xuat1DienThoai(a[i]);
+	{
+		if (strcmp(phones[i].nhaSanXuat, "SAMSUNG") == 0)
+		{
+			printf("%s\n", phones[i].tenDienThoai);
+		}
+	}
 }
 
-int demSoLuongSanPhamTungHang(DIENTHOAI a[], int n)
+// Đếm số lượng sản phẩm theo hãng
+void demSoLuongTheoHang(DIENTHOAI phones[], int n)
 {
+	char hangDaDem[MAX_PHONE][21];
+	int count[MAX_PHONE] = {0};
+	int soHang = 0;
 
+	for (int i = 0; i < n; i++)
+	{
+		int found = 0;
+		for (int j = 0; j < soHang; j++)
+		{
+			if (strcmp(phones[i].nhaSanXuat, hangDaDem[j]) == 0)
+			{
+				count[j] += phones[i].soLuong;
+				found = 1;
+				break;
+			}
+		}
+
+		if (!found)
+		{
+			strcpy(hangDaDem[soHang], phones[i].nhaSanXuat);
+			count[soHang] = phones[i].soLuong;
+			soHang++;
+		}
+	}
+
+	for (int i = 0; i < soHang; i++)
+	{
+		printf("Hang: %s - Tong so luong: %d\n", hangDaDem[i], count[i]);
+	}
+}
+
+int main()
+{
+	DIENTHOAI phones[MAX_PHONE];
+	int n;
+
+	if (!docFileDienThoai("IP.txt", phones, &n))
+	{
+		return 1;
+	}
+
+	printf("Danh sach dien thoai:\n");
+	xuatDienThoai(phones, n);
+
+	sapXepGiamTheoGia(phones, n);
+	printf("\nDanh sach sau khi sap xep giam dan theo gia ban:\n");
+	xuatDienThoai(phones, n);
+
+	printf("\nDien thoai co so luong < 10:\n");
+	xuatSoLuongNhoHon10(phones, n);
+
+	printf("\nDien thoai co ma bat dau la 'IP':\n");
+	xuatMaBatDauIP(phones, n);
+
+	printf("\nDien thoai cua hang SAMSUNG:\n");
+	xuatDienThoaiSamsung(phones, n);
+
+	printf("\nSo luong san pham theo tung hang:\n");
+	demSoLuongTheoHang(phones, n);
+
+	return 0;
 }

@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
     int n;
 
@@ -49,5 +49,5 @@ void main()
     default:
         printf("So vua nhap khong hop le!");
     }
-    getch();
+    return 0;
 }

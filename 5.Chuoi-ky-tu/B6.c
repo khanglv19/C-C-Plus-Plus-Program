@@ -26,16 +26,16 @@ char *delete_space(char *str, char *result)
     return result;
 }
 
-void main()
+int main()
 {
     char str[50];
 
     printf("Nhap vao chuoi ky tu: ");
-    gets(str);
+    fgets(str, sizeof(str), stdin);
 
     char result[100];
 
     printf("%s\n", (delete_space(str, result)));
 
-    getch();
+    return 0;
 }

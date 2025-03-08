@@ -4,7 +4,7 @@ a lớn hơn b, a bằng b, a nhỏ hơn b. */
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int a, b;
 
@@ -20,5 +20,5 @@ void main()
 		else
 			printf("\n%d bang %d", a, b);
 	}
-	getch();
+	return 0;
 }

@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int n;
 	printf("Nhap n: ");
@@ -39,5 +39,5 @@ void main()
 		}
 		printf("\n");
 	}
-	getch();
+	return 0;
 }

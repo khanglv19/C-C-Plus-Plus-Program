@@ -9,52 +9,17 @@ d. Cho biết trong ma trận dòng nào có nhiều số lẻ nhất.*/
 #include <stdlib.h>
 #include <time.h>
 
-void nhapMang(int a[20][20], int &n);
-void xuatMang(int a[20][20], int n);
-int maxChinhTren(int a[20][20], int n);
-int kiemTraMaTran0(int a[20][20], int n);
-int tinhTichPTChiaHet7TrenDCC(int a[20][20], int n);
-int demLeDongK(int a[20][20], int n, int k);
-int maxLe(int a[20][20], int n);
-
-int main()
-{
-	int a[20][20], n;
-
-	nhapMang(a, n);
-	xuatMang(a, n);
-
-	printf("\n----------------------------------------------------------------\n");
-	printf("\nTIM PHAN TU NHO NHAT CUA TAM GIAC CHINH TREN\n");
-	printf("%d", maxChinhTren(a, n));
-
-	printf("\n----------------------------------------------------------------\n");
-	printf("\nKIEM TRA XEM MA TRAN CO PHAI MA TRAN 0 HAY KHONG\n");
-	int kq = kiemTraMaTran0(a, n);
-	if (kq == 1)
-		printf("Co!");
-	else
-		printf("Khong!");
-
-	printf("\n----------------------------------------------------------------\n");
-	printf("\nTINH TICH CAC PHAN TU CHIA HET CHO 7 TREN DUONG CHEO CHINH\n");
-	printf("%d", tinhTichPTChiaHet7TrenDCC(a, n));
-
-	printf("\n----------------------------------------------------------------\n");
-	printf("\nCHO BIET MA TRAN DONG NAO CO NHIEU SO LE NHAT\n");
-	printf("%d", maxLe(a, n));
-	_getch();
-}
-
 void nhapMang(int a[20][20], int &n)
 {
 	printf("\nNhap so dong cua mang: ");
 	scanf_s("%d", &n);
+
 	printf("Nhap so cot cua mang: ");
 	scanf_s("%d", &n);
 
 	// Khởi tạo số ngẫu nhiên
 	srand(time(NULL));
+
 	for (int i = 0; i < n; i++)
 		for (int j = 0; j < n; j++)
 			a[i][j] = rand() % 100;
@@ -120,8 +85,41 @@ int maxLe(int a[20][20], int n)
 	{
 		int leDongi = demLeDongK(a, n, i);
 		int leDongm = demLeDongK(a, n, m);
+
 		if (leDongi > leDongm)
 			m = i;
 	}
 	return m;
+}
+
+int main()
+{
+	int a[20][20], n;
+
+	nhapMang(a, n);
+	xuatMang(a, n);
+
+	printf("\n----------------------------------------------------------------\n");
+	printf("\nTIM PHAN TU NHO NHAT CUA TAM GIAC CHINH TREN\n");
+	printf("%d", maxChinhTren(a, n));
+
+	printf("\n----------------------------------------------------------------\n");
+	printf("\nKIEM TRA XEM MA TRAN CO PHAI MA TRAN 0 HAY KHONG\n");
+
+	int kq = kiemTraMaTran0(a, n);
+
+	if (kq == 1)
+		printf("Co!");
+	else
+		printf("Khong!");
+
+	printf("\n----------------------------------------------------------------\n");
+	printf("\nTINH TICH CAC PHAN TU CHIA HET CHO 7 TREN DUONG CHEO CHINH\n");
+	printf("%d", tinhTichPTChiaHet7TrenDCC(a, n));
+
+	printf("\n----------------------------------------------------------------\n");
+	printf("\nCHO BIET MA TRAN DONG NAO CO NHIEU SO LE NHAT\n");
+	printf("%d", maxLe(a, n));
+
+	return 0;
 }

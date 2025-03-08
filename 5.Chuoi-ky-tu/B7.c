@@ -1,40 +1,40 @@
 ﻿// Đếm số các ký tự đặc biệt (không phải ký tự và ký số) trong chuỗi.
 
 #include <stdio.h>
-#include <conio.h>
 #include <string.h>
+#include <ctype.h>
 
-void main()
+// Hàm đếm số ký tự đặc biệt
+int countSpecialChars(const char *str)
 {
-    char str[50];
-    int chuCai = 0, chuSo = 0, kyTuDacBiet = 0, i = 0, l;
-
-    printf("Nhap chuoi: ");
-    gets(str);
-
-    l = strlen(str);
-
-    while (i < l)
+    int count = 0;
+    while (*str)
     {
-        if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+        if (!isalnum(*str) && !isspace(*str) && *str != '\n')
         {
-            chuCai++;
+            count++;
         }
-        else if (str[i] >= '0' && str[i] <= '9')
-        {
-            chuSo++;
-        }
-        else
-        {
-            kyTuDacBiet++;
-        }
+        str++;
+    }
+    return count;
+}
 
-        i++;
+int main()
+{
+    char str[200];
+
+    // Nhập chuỗi
+    printf("Nhap chuoi: ");
+
+    if (fgets(str, sizeof(str), stdin) == NULL || str[0] == '\0')
+    {
+        printf("Loi khi nhap chuoi!\n");
+        return 1;
     }
 
-    printf("So chu cai trong chuoi: %d", chuCai);
-    printf("So chu so trong chuoi: %d", chuSo);
-    printf("So ky tu dac biet trong chuoi: %d", kyTuDacBiet);
+    // Đếm ký tự đặc biệt
+    int specialCharCount = countSpecialChars(str);
+    printf("So ky tu dac biet trong chuoi: %d\n", specialCharCount);
 
-    getch();
+    return 0;
 }

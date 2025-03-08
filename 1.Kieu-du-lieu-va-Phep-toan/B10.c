@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int a, b;
 
@@ -13,5 +13,5 @@ void main()
 	int max = (a > b) ? a : b;
 
 	printf("\nSo lon nhat la: %d", max);
-	getch();
+	return 0;
 }

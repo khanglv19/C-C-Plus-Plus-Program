@@ -4,7 +4,7 @@ Biết rằng năm N là năm nhuận khi N chia hết cho 400 hoặc N chia h�
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int year;
 
@@ -15,5 +15,5 @@ void main()
 		printf("\nNam nhuan");
 	else
 		printf("\nNam khong nhuan");
-	getch();
+	return 0;
 }

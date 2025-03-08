@@ -4,7 +4,7 @@ ngược lại thì in ra ký tự tương ứng với mã đó.*/
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int as;
 
@@ -12,5 +12,5 @@ void main()
 	scanf("%d", &as);
 
 	((as >= 65 && as <= 90) || (as >= 97 && as <= 122)) ? (printf("La chu cai")) : (printf("Ky tu: %c", as));
-	getch();
+	return 0;
 }

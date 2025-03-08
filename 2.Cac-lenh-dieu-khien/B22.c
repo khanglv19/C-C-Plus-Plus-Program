@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int n;
 
@@ -14,5 +14,5 @@ void main()
 	{
 		printf("%d x %d = %d\n", n, i, n * i);
 	}
-	_getch();
+	return 0;
 }

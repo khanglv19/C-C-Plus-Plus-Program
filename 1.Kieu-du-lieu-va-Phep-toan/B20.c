@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
     float diemToan, diemLy, diemHoa, dtb;
 
@@ -17,5 +17,5 @@ void main()
     dtb = (diemToan + diemLy + diemHoa) / 3;
 
     printf("Diem trung binh: %.2f", dtb);
-    getch();
+    return 0;
 }

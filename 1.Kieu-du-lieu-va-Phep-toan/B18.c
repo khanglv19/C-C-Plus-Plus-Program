@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	float x;
 
@@ -28,5 +28,5 @@ void main()
 	int sum = integer_part + decimal_part;
 
 	printf("Tong phan nguyen va 2 so thap phan cua so thuc la: %d\n", sum);
-	getch();
+	return 0;
 }

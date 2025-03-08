@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
     int n;
     printf("Nhap mot so nguyen duong: ");
@@ -27,5 +27,5 @@ void main()
         printf("Tong cac chu so trong so nguyen duong la: %d\n", sum);
     }
 
-    getch();
+    return 0;
 }

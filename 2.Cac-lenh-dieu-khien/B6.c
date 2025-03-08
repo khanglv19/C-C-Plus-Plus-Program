@@ -4,7 +4,7 @@ Thành tiền = đơn giá * số lượng. */
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	float donGia, thanhTien, giamGia, tongTienPhaiTra;
 	int soLuong;
@@ -21,5 +21,5 @@ void main()
 
 	tongTienPhaiTra = thanhTien - giamGia;
 	printf("\nSo tien phai tra la: %.3f", tongTienPhaiTra);
-	getch();
+	return 0;
 }

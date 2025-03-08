@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
     int n, m;
 
@@ -20,5 +20,5 @@ void main()
     }
 
     printf("So loung so chan trong [%d, %d] la: %d\n", n, m, count);
-    getch();
+    return 0;
 }

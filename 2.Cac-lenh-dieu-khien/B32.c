@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
     for (int num = 100; num <= 999; num++)
     {
@@ -23,5 +23,5 @@ void main()
             printf("%d\n", num); // In ra số thỏa mãn
         }
     }
-    getch();
+    return 0;
 }

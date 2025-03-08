@@ -6,7 +6,7 @@
 #include <conio.h>
 #include <time.h>
 
-void main()
+int main()
 {
     // Lấy năm hiện tại
     time_t now = time(NULL);
@@ -21,5 +21,5 @@ void main()
     // Tính và in ra năm sinh của người đó
     int birth_year = year - age;
     printf("Nam sinh cua ban la: %d\n", birth_year);
-    getch();
+    return 0;
 }

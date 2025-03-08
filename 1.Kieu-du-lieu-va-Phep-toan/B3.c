@@ -5,7 +5,7 @@
 #include <conio.h>
 #include <math.h>
 
-void main()
+int main()
 {
 	int x;
 
@@ -18,5 +18,5 @@ void main()
 	g = 2 * pow((float)x, 4) - (5 * pow((float)x, 2)) + (4 * x) + 1;
 
 	printf("\nF(x) = %d\t\tG(x) = %d", f, g);
-	getch();
+	return 0;
 }

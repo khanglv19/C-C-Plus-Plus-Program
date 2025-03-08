@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int n;
 
@@ -14,5 +14,5 @@ void main()
 		printf("\nSo vua nhap la so chan");
 	else
 		printf("\nSo vua nhap la so le");
-	getch();
+	return 0;
 }

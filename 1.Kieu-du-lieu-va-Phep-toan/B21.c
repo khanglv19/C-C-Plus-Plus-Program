@@ -6,7 +6,7 @@
 #include <conio.h>
 #include <ctype.h>
 
-void main()
+int main()
 {
     char c;
 
@@ -25,5 +25,5 @@ void main()
     {
         printf("Ky tu %c la ky tu khac\n", c);
     }
-    getch();
+    return 0;
 }

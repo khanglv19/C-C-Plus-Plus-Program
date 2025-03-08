@@ -26,7 +26,7 @@ int hexCharToDecimal(char hexChar)
     }
 }
 
-void main()
+int main()
 {
     char hexChar;
     printf("Nhap mot ky tu bieu dien ky so he thap luc phan: ");
@@ -43,5 +43,5 @@ void main()
         printf("He thap luc phan khong dung ky so nay!\n");
     }
 
-    getch();
+    return 0;
 }

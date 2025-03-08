@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int a, b;
 
@@ -24,5 +24,5 @@ void main()
 		x = -b / a;
 		printf("\nPhuong trinh co nghiem la %.f", x);
 	}
-	getch();
+	return 0;
 }

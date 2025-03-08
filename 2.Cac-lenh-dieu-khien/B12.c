@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int a, b, luaChon;
 
@@ -40,5 +40,5 @@ void main()
 		printf("\n\tKhong ton tai lua chon hop le!");
 		break;
 	}
-	getch();
+	return 0;
 }

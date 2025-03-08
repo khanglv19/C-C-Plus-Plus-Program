@@ -7,7 +7,7 @@ Ví dụ: Nhập d = 5, r = 3
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
     int cd, cr;
 
@@ -22,5 +22,5 @@ void main()
             printf("* ");
         printf("\n");
     }
-    getch();
+    return 0;
 }

@@ -6,7 +6,7 @@ In ra thương với 0 số thập phân và 1 số thập phân.*/
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
     int a, b, c, d;
 
@@ -20,5 +20,5 @@ void main()
     printf("Tong 2 so dau la: %d\n", sum1);
     printf("Hieu 2 so cuoi la: %d\n", diff2);
     printf("Thuong cua tong 2 so dau va tong 2 so cuoi la: %.1f\n", quotient);
-    getch();
+    return 0;
 }

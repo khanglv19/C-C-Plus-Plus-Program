@@ -5,7 +5,7 @@ Nếu nhập tháng không đúng thì in ra màn hình "Month is invalid". */
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int month;
 
@@ -54,5 +54,5 @@ void main()
 		printf("\nMonth is invalid");
 		break;
 	}
-	getch();
+	return 0;
 }

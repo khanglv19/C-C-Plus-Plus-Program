@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
     int n, s = 0, i = 0;
 
@@ -17,5 +17,5 @@ void main()
     }
 
     printf("Tong cac so tu nhien nho hon n: %d", s);
-    getch();
+    return 0;
 }

@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
     int n;
 
@@ -19,5 +19,5 @@ void main()
     {
         printf("Gia tri cua n la: 0\n");
     }
-    getch();
+    return 0;
 }

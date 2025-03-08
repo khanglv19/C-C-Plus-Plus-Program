@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	for (int i = 1; i <= 100; i++)
 		printf("%4d", i);
-	getch();
+	return 0;
 }

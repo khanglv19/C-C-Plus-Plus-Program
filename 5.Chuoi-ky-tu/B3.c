@@ -1,4 +1,4 @@
-﻿//Đổi chuỗi về dạng viết hoa ký tự đầu và viết thường các ký tự còn lại.
+﻿// Đổi chuỗi về dạng viết hoa ký tự đầu và viết thường các ký tự còn lại.
 
 #include <stdio.h>
 #include <conio.h>
@@ -33,13 +33,13 @@ char inHoaKyTuDau(char s[])
     printf("%s", s);
 }
 
-void main()
+int main()
 {
     char s[max];
 
     printf("Nhap chuoi: ");
-    gets(s);
+    fgets(s, sizeof(s), stdin);
     inHoaKyTuDau(s);
 
-    getch();
+    return 0;
 }

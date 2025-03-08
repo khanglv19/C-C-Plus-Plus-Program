@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	float length, width;
 
@@ -16,5 +16,5 @@ void main()
 	area = length * width;
 
 	printf("\n\nChu vi = %.2f\t\tDien tich = %.2f", perimeter, area);
-	getch();
+	return 0;
 }

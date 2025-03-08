@@ -5,7 +5,7 @@ f(x) = 3x^2 + 4x + 5 / 2x + 1			g(x) = 3x^5 + 2x + sqrt(x+1) / 5x^2 - 3*/
 #include <conio.h>
 #include <math.h>
 
-void main()
+int main()
 {
 	int x;
 
@@ -18,5 +18,5 @@ void main()
 	g = (3 * pow((float)x, 5) + 2 * x + sqrt((float)x + 1)) / (5 * pow((float)x, 2) - 3);
 
 	printf("\n\nf(x) = %.2f\t\tg(x) = %.2f", f, g);
-	getch();
+	return 0;
 }

@@ -5,7 +5,7 @@
 #include <math.h>
 #define PI 3.14
 
-void main()
+int main()
 {
 	float radius;
 
@@ -18,5 +18,5 @@ void main()
 	area = PI * pow(radius, 2);
 
 	printf("\nChu vi = %.2f\t\tDien tich = %.2f", perimeter, area);
-	getch();
+	return 0;
 }

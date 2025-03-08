@@ -1,81 +1,51 @@
 ﻿// Chuẩn hóa chuỗi (xóa các ký tự trống thừa: các ký tự trống đầu và cuối, giữa 2 từ chỉ có 1 ký tự trống.
 
 #include <stdio.h>
-#include <conio.h>
 #include <string.h>
+#include <ctype.h>
 
-// Hàm biến đổi ký tự thường thành ký tự hoa
-char toupper(char charx)
+// Hàm chuẩn hóa chuỗi
+void trimAndNormalize(char *str)
 {
-    if (charx >= 'a' && charx <= 'z')
-        charx = charx - 32;
-    return charx;
+    int i = 0, j = 0;
+    int len = strlen(str);
+
+    // Bỏ khoảng trắng đầu chuỗi
+    while (i < len && isspace(str[i]))
+        i++;
+
+    // Duyệt chuỗi và loại bỏ khoảng trắng thừa
+    for (; i < len; i++)
+    {
+        if (!isspace(str[i]) || (j > 0 && !isspace(str[j - 1])))
+        {
+            str[j++] = str[i];
+        }
+    }
+
+    // Bỏ khoảng trắng cuối chuỗi
+    while (j > 0 && isspace(str[j - 1]))
+        j--;
+
+    str[j] = '\0';
 }
 
-// Hàm chuẩn hóa xâu
-void chuanHoa(char a[])
+int main()
 {
-    int n = strlen(a); // Lấy độ dài xâu
+    char str[200];
 
-    // Xóa khoảng trắng đầu xâu
-    for (int i = 0; i < n; i++)
-    {
-        if (a[i] == ' ')
-        {
-            for (int j = i; j < n - 1; j++)
-            {
-                a[j] = a[j + 1];
-            }
-            a[n - 1] = NULL;
-            i--;
-            n--;
-        }
-        else
-            break;
-    }
+    // Nhập chuỗi
+    printf("Nhap chuoi: ");
+    fgets(str, sizeof(str), stdin);
 
-    // Xóa khoảng trắng cuối xâu
-    for (int i = n - 1; i >= 0; i--)
-    {
-        if (a[i] == ' ')
-        {
-            a[i] = NULL;
-            n--;
-        }
-        else
-            break;
-    }
+    // Xóa ký tự xuống dòng của fgets
+    str[strcspn(str, "\n")] = 0;
 
-    // Xóa khoảng trắng không hợp lệ(khoảng trắng bị thừa)
-    for (int i = 1; i < n - 1; i++)
-    {
-        if (a[i] == a[i + 1])
-        {
-            for (int j = i; j < n - 1; j++)
-            {
-                a[j] = a[j + 1];
-            }
-            a[n - 1] = NULL;
-            i--;
-            n--;
-        }
-    }
+    // Chuẩn hóa chuỗi
+    trimAndNormalize(str);
 
-    // In hoa ký tự đầu tiên
-    a[0] = toupper(a[0]);
-}
+    // In chuỗi đã chuẩn hóa
+    printf("Chuoi sau khi chuan hoa: '%s'\n", str);
 
-void main()
-{
-    char a[100];
-
-    printf("Moi ban nhap chuoi:");
-    gets(a);
-
-    chuanHoa(a);
-
-    printf("Chuoi duoc chuan hoa:");
-    puts(a);
-
-    getch();
+    return 0;
 }

@@ -10,43 +10,6 @@ d. Xóa tất cả các phần tử lớn hơn 10 trong mảng. */
 #include <time.h>
 #define MAXSIZE 20
 
-void nhapMang(int a[], int &n);
-void xuatMang(int a[], int n);
-void swap(int &x, int &y);
-void sapXep(int a[], int n);
-int timPhanTuLonNhat(int a[], int n);
-int timViTriChanLonNhat(int a[], int n);
-void xoatPT(int a[], int &n, int k);
-void xoatPTLonHon10(int a[], int &n);
-
-int main()
-{
-	int a[MAXSIZE], n;
-
-	nhapMang(a, n);
-	xuatMang(a, n);
-
-	printf("\n========================================================\n");
-	printf("\n\tSAP XEP CAC PHAN TU DUONG TRONG MANG TANG DAN\n");
-	sapXep(a, n);
-	xuatMang(a, n);
-
-	printf("\n========================================================\n");
-	printf("\n\tTIM PHAN TU LON NHAT CUA MANG\n");
-	printf("Phan tu lon nhat la: %d", timPhanTuLonNhat(a, n));
-
-	printf("\n========================================================\n");
-	printf("\n\tTIM VI TRI CHAN LON NHAT TRONG MANG\n");
-	printf("Vi tri thu: %d", timViTriChanLonNhat(a, n));
-
-	printf("\n========================================================\n");
-	printf("\n\tXOA TAT CA CAC PHAN TU LON HON 10 TRONG MANG\n");
-
-	xoatPTLonHon10(a, n);
-	xuatMang(a, n);
-	_getch();
-}
-
 void nhapMang(int a[], int &n)
 {
 	printf("\nNhap so luong phan tu cua mang: ");
@@ -134,4 +97,33 @@ void xoatPTLonHon10(int a[], int &n)
 			xoatPT(a, n, i);
 			i--;
 		}
+}
+
+int main()
+{
+	int a[MAXSIZE], n;
+
+	nhapMang(a, n);
+	xuatMang(a, n);
+
+	printf("\n========================================================\n");
+	printf("\n\tSAP XEP CAC PHAN TU DUONG TRONG MANG TANG DAN\n");
+	sapXep(a, n);
+	xuatMang(a, n);
+
+	printf("\n========================================================\n");
+	printf("\n\tTIM PHAN TU LON NHAT CUA MANG\n");
+	printf("Phan tu lon nhat la: %d", timPhanTuLonNhat(a, n));
+
+	printf("\n========================================================\n");
+	printf("\n\tTIM VI TRI CHAN LON NHAT TRONG MANG\n");
+	printf("Vi tri thu: %d", timViTriChanLonNhat(a, n));
+
+	printf("\n========================================================\n");
+	printf("\n\tXOA TAT CA CAC PHAN TU LON HON 10 TRONG MANG\n");
+
+	xoatPTLonHon10(a, n);
+	xuatMang(a, n);
+
+	return 0;
 }

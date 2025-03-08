@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int a, b;
 
@@ -14,5 +14,5 @@ void main()
 		printf("\n%d la boi cua %d", a, b);
 	else
 		printf("\n%d khong la boi cua %d", a, b);
-	getch();
+	return 0;
 }

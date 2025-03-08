@@ -8,7 +8,7 @@
 #include <math.h>
 #define PI 3.14
 
-void main()
+int main()
 {
 	char chon;
 
@@ -50,5 +50,5 @@ void main()
 	default:
 		break;
 	}
-	getch();
+	return 0;
 }

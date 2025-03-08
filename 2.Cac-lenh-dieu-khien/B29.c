@@ -8,7 +8,7 @@ Từ 300KW trở lên: $20 */
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int soDien, tien = 0;
 
@@ -23,8 +23,9 @@ void main()
 		tien = 100 * 5 + 50 * 7 + (soDien - 150) * 10;
 	else if (soDien <= 300)
 		tien = 100 * 5 + 50 * 7 + 50 * 10 + (soDien - 200) * 15;
-	else tien = 100 * 5 + 50 * 7 + 50 * 10 + 100 * 15 + (soDien - 300) * 20;
-	
+	else
+		tien = 100 * 5 + 50 * 7 + 50 * 10 + 100 * 15 + (soDien - 300) * 20;
+
 	printf("\n\tSo tien phai tra la %d", tien);
-	_getch();
+	return 0;
 }

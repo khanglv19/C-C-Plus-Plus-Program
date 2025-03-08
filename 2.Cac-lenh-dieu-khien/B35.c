@@ -4,7 +4,7 @@ Hãy in ra màn hình kết quả của phép toán vừa nhập với 2 số h�
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	int a, b;
 	char op;
@@ -38,5 +38,5 @@ void main()
 	}
 
 	printf("Ket qua cua %d %c %d la: %.2f\n", a, op, b, result);
-	getch();
+	return 0;
 }

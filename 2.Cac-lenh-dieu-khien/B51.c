@@ -31,5 +31,4 @@ int main()
     printf("T(%lf, %d) = %lf\n", x, n, result);
 
     return 0;
-    getch();
 }

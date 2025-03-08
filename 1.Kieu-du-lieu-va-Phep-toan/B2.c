@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
 	float f, c;
 
@@ -13,5 +13,5 @@ void main()
 	c = 5.0 / 9.0 * (f - 32);
 
 	printf("\nNhiet do C la: %.2f", c);
-	getch();
+	return 0;
 }

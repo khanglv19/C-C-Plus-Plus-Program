@@ -12,181 +12,176 @@ e. Viết hàm xuất các sách có số lượng > 10.
 f. Xuất các sách có mã số bắt đầu là <<SA>>.
 g. Xuất các sách có tên chứa chuỗi <<Lap trinh>>.
 h. Xóa các sách có số lượng 0.
-i. Sắp xếp danh sách giảm dần theo số lượng.*/
+i. Sắp xếp danh sách giảm dần theo số lượng. */
 
 #include <stdio.h>
-#include <conio.h>
+#include <stdlib.h>
 #include <string.h>
-#include <string>
-#include <fstream>
+#include <ctype.h>
 
-using namespace std;
+#define MAX_BOOKS 100
 
-struct SACH
+typedef struct
 {
-	char ma[11];
-	char ten[31];
-	float gia;
+	char maSach[11];
+	char tenSach[31];
+	float giaBan;
 	int soLuong;
-};
+} SACH;
 
-void nhapSachTuBanPhim(SACH &s);
-void nhapSachTuFile(SACH &s);
-void xuat1Sach(SACH s);
-void nhapMang(SACH a[], int &n);
-void xuatMang(SACH a[], int n);
-void swap(SACH &x, SACH &y);
-void sapXepTangTheoTen(SACH a[], int n);
-void xuatSachCoSLLonHon10(SACH a[], int n);
-void xuatSachCoMaBatDau_SA(SACH a[], int n);
-void xuatSachTenLapTrinh(SACH a[], int n);
-void xoatPhanTu(SACH a[], int &n, int k);
-void xoaSachCoSLKhong(SACH a[], int &n);
-void sapXepGiamTheoSL(SACH a[], int n);
-
-void main()
+// Hàm đọc dữ liệu từ file
+int docFileSach(const char *filename, SACH books[], int *n)
 {
-	SACH s, a[100];
-	int n;
-	//nhapSachTuBanPhim(s);
-	nhapSachTuFile(s);
-	printf("\n================================================================\n");
-	//xuat1Sach(s);
-	printf("\n================================================================\n");
-	nhapMang(a, n);
-	printf("\n================================================================\n");
-	sapXepTangTheoTen(a, n);
-	printf("\n================================================================\n");
-	xuatSachCoSLLonHon10(a, n);
-	printf("\n================================================================\n");
-	xuatSachCoMaBatDau_SA(a, n);
-	printf("\n================================================================\n");
-	xuatSachTenLapTrinh(a, n);
-	printf("\n================================================================\n");
-	xoaSachCoSLKhong(a, n);
-	printf("\n================================================================\n");
-	sapXepGiamTheoSL(a, n);
-	_getch();
-}
-
-void nhapSachTuBanPhim(SACH &s)
-{
-	printf("\nNhap ma sach: ");
-	_flushall();
-	gets_s(s.ma);
-	printf("\nNhap ten sach: ");
-	_flushall();
-	gets_s(s.ten);
-	printf("\nNhap gia ban: ");
-	scanf_s("%f", &s.gia);
-	printf("\nNhap so luong: ");
-	scanf_s("%d", &s.soLuong);
-}
-
-void nhapSachTuFile(SACH &s)
-{
-	int n;
-	ifstream f;
-	f.open("D:\\C_C-Plus-Plus_Program\\Sach.txt", ios::in);
-	//string data;
-	
-	f >> n;
-	for (int i = 0; i < n; i++)
+	FILE *file = fopen(filename, "r");
+	if (file == NULL)
 	{
-		f >> s.ma;
-		f >> s.ten;
-		f >> s.gia;
-		f >> s.soLuong;
+		printf("Khong the mo file %s!\n", filename);
+		return 0;
 	}
-	f.close();
-	for (int i = 0; i < n; i++)
-		printf("\n\t%10s\t%30s\t%7.2f\t%5d", s.ma, s.ten, s.gia, s.soLuong);
 
+	*n = 0;
+
+	while (fscanf(file, "%10s %30[^\n] %f %d\n", books[*n].maSach, books[*n].tenSach, &books[*n].giaBan, &books[*n].soLuong) == 4)
+	{
+		(*n)++;
+	}
+
+	fclose(file);
+	return 1;
 }
 
-void xuat1Sach(SACH s)
+// Hàm xuất thông tin sách
+void xuatSach(SACH books[], int n)
 {
-	printf("\n\t%10s\t%30s\t%7.2f\t%5d", s.ma, s.ten, s.gia, s.soLuong);
-}
-
-void nhapMang(SACH a[], int &n)
-{
-	do
-	{
-		printf("\nNhap n: ");
-		scanf_s("%d", &n);
-	} while (n <= 0);
 	for (int i = 0; i < n; i++)
 	{
-		printf("\nVui long nhap cuon sach thu %d: ", &n, i);
-		//nhapSachTuBanPhim(a[i]);
-		nhapSachTuFile(a[i]);
+		printf("Ma sach: %s, Ten sach: %s, Gia ban: %.2f, So luong: %d\n", books[i].maSach, books[i].tenSach, books[i].giaBan, books[i].soLuong);
 	}
 }
 
-void xuatMang(SACH a[], int n)
+// Sắp xếp tăng dần theo tên sách
+void sapXepTheoTen(SACH books[], int n)
 {
-	for (int i = 0; i < n; i++)
-		xuat1Sach(a[i]);
-}
-
-void swap(SACH &x, SACH &y)
-{
-	SACH temp = x;
-	x = y;
-	y = temp;
-}
-
-void sapXepTangTheoTen(SACH a[], int n)
-{
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < n - 1; i++)
+	{
 		for (int j = i + 1; j < n; j++)
-			if (strcmp(a[i].ten, a[j].ten)>0)
-				swap(a[i], a[j]);
-}
-
-void xuatSachCoSLLonHon10(SACH a[], int n)
-{
-	for (int i = 0; i < n; i++)
-		if (a[i].soLuong>10)
-			xuat1Sach(a[i]);
-}
-
-void xuatSachCoMaBatDau_SA(SACH a[], int n)
-{
-	for (int i = 0; i < n; i++)
-		if (a[i].ma[0] == 'S'&&a[i].ma[1] == 'A')
-			xuat1Sach(a[i]);
-}
-
-void xuatSachTenLapTrinh(SACH a[], int n)
-{
-	for (int i = 0; i < n; i++)
-		if (strstr(a[i].ten, "Lap trinh") != NULL)
-			xuat1Sach(a[i]);
-}
-
-void xoatPhanTu(SACH a[], int &n, int k)
-{
-	for (int i = k; i < n - 1; i++)
-		a[i] = a[i + 1];
-	n--;
-}
-
-void xoaSachCoSLKhong(SACH a[], int &n)
-{
-	for (int i = 0; i < n;i++)
-		if (a[i].soLuong==0)
 		{
-			xoatPhanTu(a, n, i);
-			i--;
+			if (strcmp(books[i].tenSach, books[j].tenSach) > 0)
+			{
+				SACH temp = books[i];
+				books[i] = books[j];
+				books[j] = temp;
+			}
 		}
+	}
 }
 
-void sapXepGiamTheoSL(SACH a[], int n)
+// Xuất sách có số lượng > 10
+void xuatSachSoLuongLonHon10(SACH books[], int n)
 {
 	for (int i = 0; i < n; i++)
+	{
+		if (books[i].soLuong > 10)
+		{
+			printf("%s\n", books[i].tenSach);
+		}
+	}
+}
+
+// Xuất sách có mã bắt đầu bằng SA
+void xuatSachMaBatDauSA(SACH books[], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		if (strncmp(books[i].maSach, "SA", 2) == 0)
+		{
+			printf("%s\n", books[i].tenSach);
+		}
+	}
+}
+
+// Xuất sách có tên chứa chuỗi "Lap trinh"
+void xuatSachCoTenLapTrinh(SACH books[], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		if (strstr(books[i].tenSach, "Lap trinh") != NULL)
+		{
+			printf("%s\n", books[i].tenSach);
+		}
+	}
+}
+
+// Xóa sách có số lượng bằng 0
+int xoaSachSoLuong0(SACH books[], int *n)
+{
+	int count = 0;
+	for (int i = 0; i < *n; i++)
+	{
+		if (books[i].soLuong == 0)
+		{
+			for (int j = i; j < *n - 1; j++)
+			{
+				books[j] = books[j + 1];
+			}
+			(*n)--;
+			i--;
+			count++;
+		}
+	}
+	return count;
+}
+
+// Sắp xếp giảm dần theo số lượng
+void sapXepGiamTheoSoLuong(SACH books[], int n)
+{
+	for (int i = 0; i < n - 1; i++)
+	{
 		for (int j = i + 1; j < n; j++)
-			if (a[i].soLuong < a[j].soLuong)
-				swap(a[i], a[j]);
+		{
+			if (books[i].soLuong < books[j].soLuong)
+			{
+				SACH temp = books[i];
+				books[i] = books[j];
+				books[j] = temp;
+			}
+		}
+	}
+}
+
+int main()
+{
+	SACH books[MAX_BOOKS];
+	int n;
+
+	if (!docFileSach("IP.txt", books, &n))
+	{
+		return 1;
+	}
+
+	printf("Danh sach sach ban dau:\n");
+	xuatSach(books, n);
+
+	sapXepTheoTen(books, n);
+	printf("\nDanh sach sau khi sap xep theo ten:\n");
+	xuatSach(books, n);
+
+	printf("\nSach co so luong > 10:\n");
+	xuatSachSoLuongLonHon10(books, n);
+
+	printf("\nSach co ma bat dau la 'SA':\n");
+	xuatSachMaBatDauSA(books, n);
+
+	printf("\nSach co ten chua 'Lap trinh':\n");
+	xuatSachCoTenLapTrinh(books, n);
+
+	xoaSachSoLuong0(books, &n);
+	printf("\nDanh sach sau khi xoa sach co so luong 0:\n");
+	xuatSach(books, n);
+
+	sapXepGiamTheoSoLuong(books, n);
+	printf("\nDanh sach sau khi sap xep giam dan theo so luong:\n");
+	xuatSach(books, n);
+
+	return 0;
 }

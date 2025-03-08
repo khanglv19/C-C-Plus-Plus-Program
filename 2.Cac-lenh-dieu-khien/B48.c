@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
     int n;
     double sum = 0.0;
@@ -25,5 +25,5 @@ void main()
         printf("Tong S(%d) = %.4f\n", n, sum);
     }
 
-    getch();
+    return 0;
 }
